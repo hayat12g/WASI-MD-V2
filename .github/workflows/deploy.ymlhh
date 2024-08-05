@@ -1,0 +1,25 @@
+name: Node-js CI
+on:
+push
+branches:
+main
+pull_request:
+branches:
+main
+jobs:
+build:
+runs-on: ubuntu-latest
+strategy:
+matrix:
+node-version: [20.x]
+steps:
+- name: Checkout repository
+uses: actions/checkout@v3
+nane: Set up Nodejs
+uses: actions/setup-nodeêv3
+with
+version: ${{ matrix. node-version }}
+name: install dependencies
+run: npn instal1
+nane: Start application
+run: npm start
